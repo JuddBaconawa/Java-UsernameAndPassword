@@ -9,6 +9,7 @@ import java.util.Arrays;
 //main class
 public class UserService {
 	
+	//login method which checks for the username and password credentials
 	public static boolean login(String username, char[] password, ArrayList<Account> account) {
 		for (Account accounts : account) {
 
