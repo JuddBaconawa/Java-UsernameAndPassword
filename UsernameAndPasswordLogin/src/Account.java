@@ -2,42 +2,42 @@
 
 
 //imports
-import java.util.ArrayList;
-
-//Account class
 public class Account {
 
-	//ArrayList for accounts to be populated in
-	ArrayList <Account> account = new ArrayList<>();
+
 	
 	//declaration/initialization of an Account's attributes
-	private String username;
+	private String username; //static removed because it makes all credentials share the same value
 	private char[] password;
 	private int userId; //TBA
 
-	//used to add the users credentials for logging in, must be set to void, cant be static
-	public void initializeUsers() {
-		account.add(new Account("admin", "password01")); //add(new Account) specifies which ArrayList and that it is new
-		account.add(new Account("user01", "password01"));
-	}
 
-	//account method
-	public Account(String username, String password) {
+
+	//account method constructor
+	public Account(String username, String password, int userId) {
 
 		//sets the username used
-		this.username = username;
+		this.username = username; //normal - this.username
 		this.password = password.toCharArray(); //changed from password to password.toCharArray()
+		this.userId = userId; //just adding now for the future
 
 	}
 
 	//username getter
-	public static String getUsername() {
+	public String getUsername() {
+		//returns username
 		return username;
 	}
 
 	//password getter
 	public char[] getPassword() {
+		//returns password
 		return password;
+	}
+
+	//userId Getter
+	public int getUserId() {
+		return userId;
 	}
 
 
