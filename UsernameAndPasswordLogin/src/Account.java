@@ -31,7 +31,7 @@ public class Account {
 	}
 
 	//username getter
-	public String getUsername() {
+	public static String getUsername() {
 		return username;
 	}
 
