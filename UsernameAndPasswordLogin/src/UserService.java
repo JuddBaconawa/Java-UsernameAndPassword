@@ -8,6 +8,15 @@ import java.util.Arrays;
 
 //main class
 public class UserService {
+
+		//ArrayList for accounts to be populated in
+		static ArrayList <Account> accounts = new ArrayList<>();
+		
+			//used to add the users credentials for logging in, must be set to void, cant be static
+			public static void initializeUsers() {
+				accounts.add(new Account("admin", "password01", 000001));
+				accounts.add(new Account("user01", "password01", 000002));
+	}
 	
 	//login method which checks for the username and password credentials
 	public static boolean login(String username, char[] password, ArrayList<Account> account) {
@@ -15,7 +24,7 @@ public class UserService {
 
 			//check matches with an if statements
 			//employs the getters to match the inputed username and password to return true or false
-			if (account.getUsername().equals(username) && Arrays.equals(account.getPassword(), password)) {
+			if (accounts.getUsername().equals(username) && Arrays.equals(accounts.getPassword(), password)) {
 				//true
 				return true;
 			}
@@ -24,16 +33,11 @@ public class UserService {
 		return false;
 	}
 
-	//used to add the users credentials for logging in, must be set to void, cant be static
-	public static void initializeUsers() {
 
-		//ArrayList for accounts to be populated in
-		ArrayList <Account> account = new ArrayList<>();
+
 	
-	
-			account.add(new Account("admin", "password01", 000001)); //add(new Account) specifies which ArrayList and that it is new
-			account.add(new Account("user01", "password01", 000002));
-			//userId added on both add -
+		public static ArrayList<Account> getAccounts() {
+			return accounts;
 		}
 
 

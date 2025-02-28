@@ -2,10 +2,13 @@
 
 
 //imports
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //main class titled "App"
 public class App {
+
+
 
     //Main method where the main execution of code happens
     public static void main(String[] args) throws Exception {
@@ -14,6 +17,10 @@ public class App {
         //scanner initialized
         Scanner scanner = new Scanner(System.in);
 
+        //initialize the user database
+        UserService.initializeUsers();
+        ArrayList<Account> account = UserService.getAccounts();
+
         while (true) { 
 
 
@@ -21,11 +28,22 @@ public class App {
             System.out.println("Enter username: ");
             String username = scanner.nextLine(); //
 
+            //prompts the user to input a password
             System.out.println("Enter password");
             String password = scanner.nextLine();
 
-            System.out.println("Credentials valid."); 
-            System.out.println("Welcome " + username + "!");
+            if (username.isEmpty() || password.isEmpty()) {
+                System.out.println("Blank input issue.");
+            } else {
+            //dispplays if credential is valid
+                boolean loggedIn = UserService.login(username, password.toCharArray(), UserService.getAccounts());
+
+                if (loggedIn) {
+                    System.out.println("Login Successfull!");
+                } else {
+                    System.out.println("Credentials not found.");
+                }
+            }
 
             //Loop to ask for credentials again - 
             System.out.println("Do you want to continue? (Y/N)");
@@ -39,6 +57,8 @@ public class App {
 
 
         }
-    
+        scanner.close(); //fore close scanner
     }
+
+
 }

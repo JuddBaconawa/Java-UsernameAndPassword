@@ -37,6 +37,7 @@ public class Account {
 
 	//userId Getter
 	public int getUserId() {
+		//returns userId
 		return userId;
 	}
 
