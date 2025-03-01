@@ -9,7 +9,7 @@ import java.util.Arrays;
 //main class
 public class UserService {
 
-		//ArrayList for accounts to be populated in
+		//ArrayList for accounts to be populated in - added to both UserService.java and App.Java and made static
 		static ArrayList <Account> accounts = new ArrayList<>();
 		
 			//used to add the users credentials for logging in, must be set to void, cant be static
@@ -35,9 +35,9 @@ public class UserService {
 
 
 
-	
+		//Getter method to get the account
 		public static ArrayList<Account> getAccounts() {
-			return accounts;
+			return UserService.accounts;
 		}
 
 

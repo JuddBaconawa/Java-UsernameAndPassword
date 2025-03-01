@@ -19,8 +19,10 @@ public class App {
 
         //initialize the user database
         UserService.initializeUsers();
-        ArrayList<Account> account = UserService.getAccounts();
+        //must be added to grant the App class direct access to the list of accounts
+        ArrayList<Account> account = UserService.getAccounts(); 
 
+        //while statement to loop after the log in or due to invalid credentials/failed login
         while (true) { 
 
 
