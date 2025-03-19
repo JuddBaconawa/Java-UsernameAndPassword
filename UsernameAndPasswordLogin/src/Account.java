@@ -9,10 +9,10 @@ public class Account {
 	private int userId; // TBA
 
 	// account method constructor
-	public Account(String username, String password, int userId) {
-
-
-
+	public Account(String username, String password, int userId) { //kept string for security purpose
+		this.username = username;
+		this.password = password.toCharArray();	//stored as char array for security
+		this.userId = userId;
 	}
 
 	// username getter
