@@ -12,10 +12,10 @@ public class UserService {
 		//ArrayList for accounts to be populated in - added to both UserService.java and App.Java and made static
 		static ArrayList <Account> accounts = new ArrayList<>();
 		
-			//used to add the users credentials for logging in, must be set to void, cant be static
-			public static void initializeUsers() {
-				accounts.add(new Account("admin", "password01", 000001));
-				accounts.add(new Account("user01", "password01", 000002));
+		//used to add the users credentials for logging in, must be set to void, cant be static
+		public static void initializeUsers() {
+			accounts.add(new Account("admin", "password01", 000001));
+			accounts.add(new Account("user01", "password01", 000002));
 	}
 	
 	//login method which checks for the username and password credentials
